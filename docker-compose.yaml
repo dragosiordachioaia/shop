@@ -1,0 +1,14 @@
+version: "2"
+services:
+  api:
+    build: .
+    command: flask run --host=0.0.0.0 --port 8000 --no-debugger
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+    ports:
+      - "8000:8000"
+    environment:
+      FLASK_APP: /app/backend/__init__.py
+      FLASK_DEBUG: 1
