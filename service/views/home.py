@@ -1,22 +1,23 @@
-import os
+from flask import (
+    render_template, jsonify
+)
 
-# from flask_sqlalchemy import SQLAlchemy
-from service import db
+from service import app, db
 from service.models.user import User
-
-from service import app
-# from backend import utils
 
 
 @app.route('/')
-def home():
-    return "hello there, stranger!"
+def index():
+    # return "Hello there, you"
+    return render_template('index.html')
 
 
-@app.route('/var/')
-def var():
-    POSTGRES_URL = os.environ.get('POSTGRES_URL', 'sucker')
-    return POSTGRES_URL
+@app.route('/demo_content/')
+def demo_content():
+    content = {
+        "name": "Awesome App",
+    }
+    return jsonify(content)
 
 
 @app.route('/users/', methods=["POST"])
@@ -24,7 +25,5 @@ def insert_user():
     new_user = User(username='dragos', email='xdragosy@gmail.com')
     db.session.add(new_user)
     db.session.commit()
-
-    users = User.query.all()
-    print('users = ', users, flush=True)
+    # users = User.query.all()
     return "success"
