@@ -3,7 +3,7 @@ import { Autobind } from '../utils';
 
 import Demo from 'smart_components/demo';
 
-class App extends Autobind {
+export default class App extends Autobind {
   render() {
     return (
         <div>
@@ -14,5 +14,3 @@ class App extends Autobind {
     );
   }
 }
-
-export default App;
