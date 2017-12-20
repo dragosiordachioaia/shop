@@ -1,14 +1,33 @@
 version: "2"
 services:
+
+  redis:
+    image: redis:alpine
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: shop
+      MYSQL_USER: shop
+      MYSQL_PASSWORD: shop
+      MYSQL_ROOT_PASSWORD: root
+
   api:
     build: .
     command: flask run --host=0.0.0.0 --port 8000 --no-debugger
     volumes:
       - .:/app
     depends_on:
-      - redis
+      - mysql 
     ports:
       - "8000:8000"
     environment:
-      FLASK_APP: /app/backend/__init__.py
+      FLASK_APP: /app/service/__init__.py
       FLASK_DEBUG: 1
+      SERVICE_MODE: dev
+      DB_HOST: mysql 
+      DB_NAME: shop
+      DB_USER: shop
+      DB_PASS: shop
