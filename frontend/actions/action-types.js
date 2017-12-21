@@ -1,1 +1,3 @@
 export const DEMO_ACTION = 'DEMO_ACTION';
+export const ADD_ELEMENTS = 'ADD_ELEMENTS';
+export const RETRIEVE_ELEMENTS = 'RETRIEVE_ELEMENTS';
