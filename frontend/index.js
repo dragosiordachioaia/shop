@@ -6,6 +6,7 @@ import reducers from './reducers/store';
 import App from './smart_components/app';
 
 import { initStore } from 'utils';
+import './less/main.less';
 
 const store = initStore(reducers);
 

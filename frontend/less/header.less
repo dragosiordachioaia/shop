@@ -1,0 +1,55 @@
+@import 'colors';
+
+nav {
+  color: @color1;
+  margin-bottom: 30px;
+  padding: 0 40px;
+
+  a {
+    letter-spacing: 4px;
+    font-size: 0.9em;
+    cursor: pointer !important;
+
+    &:hover {
+      font-weight: 700;
+    }
+  }
+
+  .left-part {
+    display: inline-block;
+    width: 25%;
+    text-transform: uppercase;
+
+    a {
+      margin-right: 20px;
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 1.5em;
+    position: relative;
+    top: 3px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .right-part {
+    display: inline-block;
+    width: 25%;
+    text-align: right;
+    text-transform: uppercase;
+
+    a {
+      margin-left: 20px;
+    }
+  }
+
+
+}
