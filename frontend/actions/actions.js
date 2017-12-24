@@ -11,3 +11,11 @@ export function demoAction() {
     payload: promise,
   }
 }
+
+export function createUser(data) {
+  const promise = axios.post(`${BASE_URL}/users/`, data);
+  return {
+    type: actions.CREATE_USER,
+    payload: promise,
+  }
+}

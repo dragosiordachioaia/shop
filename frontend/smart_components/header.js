@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
+
 import {smartComponent, Autobind} from '../utils';
 
 export default smartComponent(
@@ -16,12 +19,19 @@ export default smartComponent(
             <a>About</a>
           </div>
           <div className="logo">
-            Jack Erwin
+            <Link to="/">
+              Jack Erwin
+            </Link>
+
           </div>
           <div className="right-part">
             <a>Help</a>
-            <a>Visit</a>
-            <a>Login</a>
+            <Link to="/login">
+              Login
+            </Link>
+            <Link to="/register">
+              Register
+            </Link>
           </div>
         </nav>
       )
