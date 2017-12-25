@@ -64,6 +64,22 @@ def users():
     return jsonify(users_json)
 
 
+@app.route('/help')
+@jwt_required()
+def get_help():
+    return jsonify({"help": "This is your help message. You're logged in!"})
+
+
+@app.route('/user_details')
+@jwt_required()
+def get_user_details():
+    print('auth credentials =', current_identity, flush=True)
+    return jsonify({
+        "username": current_identity['username'],
+        "email": current_identity['email']
+    })
+
+
 @app.route('/')
 @app.route('/<path:path>')
 def home(path=""):

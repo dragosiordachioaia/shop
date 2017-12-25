@@ -1,22 +1,34 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
+// import isLoggedIn from 'auth';
 
 
+function getAuthHeader() {
+  let headers = {};
+  let jwt = Cookies.get('jwt');
+  if(jwt) {
+    headers['Authorization'] = `JWT ${jwt}`;
+  }
+  return headers;
+}
 
 export function get(url) {
-  console.log('requests::get() store = ', store);
+  let headers = getAuthHeader();
+
   return axios({
     method: 'get',
     url,
-    headers: {
-      'Authorization': 'JWT AAA',
-    }
+    headers,
   });
 }
 
 export function post(url, data) {
+  let headers = getAuthHeader();
+
   return axios({
     method: 'post',
     url,
     data,
+    headers,
   });
 }

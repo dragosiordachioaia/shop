@@ -13,7 +13,6 @@ export default smartComponent(
     }
 
     onFormSubmit(e) {
-      console.log('onFormSubmit()');
       e.preventDefault();
     }
 

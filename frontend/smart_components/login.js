@@ -1,4 +1,7 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
+import Cookies from 'js-cookie';
 import {smartComponent, Autobind} from '../utils';
 
 export default smartComponent(
@@ -11,8 +14,19 @@ export default smartComponent(
       }
     }
 
+    componentDidMount() {
+      if(Cookies.get('jwt')) {
+        this.props.history.push('/');
+      }
+    }
+
+    componentWillUpdate(props) {
+      if(Cookies.get('jwt')) {
+        props.history.push('/');
+      }
+    }
+
     onFormSubmit(e) {
-      console.log('onFormSubmit()');
       e.preventDefault();
     }
 
