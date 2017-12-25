@@ -1,7 +1,7 @@
-"""empty message
+"""Created user table
 
 Revision ID: 596b4cce457f
-Revises: 
+Revises:
 Create Date: 2017-12-20 20:03:25.880700
 
 """

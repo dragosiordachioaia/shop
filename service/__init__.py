@@ -10,5 +10,9 @@ app.config.from_object('service.config')
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+
+
+
 import service.views # noqa
 import service.models # noqa
+import service.security # noqa
