@@ -11,10 +11,15 @@ export default smartComponent(
       }
     }
 
+    onFormSubmit(e) {
+      console.log('onFormSubmit()');
+      e.preventDefault();
+    }
+
 
     render() {
       return (
-        <form className="login-form">
+        <form className="login-form" onSubmit={this.onFormSubmit}>
           <h2>Login</h2>
           <label>Username</label><br />
           <input
@@ -31,7 +36,7 @@ export default smartComponent(
           />
           <br />
           <button onClick={e =>
-            this.props.createUser({
+            this.props.login({
               username: this.state.username,
               password: this.state.password
             })

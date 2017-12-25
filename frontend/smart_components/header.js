@@ -5,11 +5,7 @@ import { Link } from 'react-router-dom';
 import {smartComponent, Autobind} from '../utils';
 
 export default smartComponent(
-  class Demo extends Autobind {
-    componentDidMount() {
-      this.props.demoAction();
-    }
-
+  class extends Autobind {
     render() {
       return (
         <nav>

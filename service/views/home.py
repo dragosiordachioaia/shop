@@ -2,13 +2,14 @@ from datetime import timedelta
 from flask import (
     render_template, jsonify, request
 )
+from werkzeug.routing import BaseConverter
+
 from flask_restful import Resource, Api
 from flask_jwt import JWT, jwt_required, current_identity, _jwt_required, JWTError
 from service import app, db
 from service.security import authenticate, identity
 from service.models.user import User
 
-# app.secret_key = "dragos"
 app.config['SECRET_KEY'] = 'super-secret'
 app.config['JWT_DEFAULT_REALM'] = 'Login Required'
 app.config['JWT_EXPIRATION_DELTA'] = timedelta(
@@ -31,24 +32,45 @@ def check_login():
         is_logged_in = False
     return is_logged_in
 
-class UsersResource(Resource):
-    # @jwt_required()
+
+# class UsersResource(Resource):
+#     # @jwt_required()
+#     def get(self):
+#         print("__________", flush=True)
+#         print(request.headers, flush=True)
+#         print("__________", flush=True)
+#         # is_logged_in = check_login()
+#         # print("is_logged_in: ", is_logged_in, flush=True)
+#         # print('auth credentials =', current_identity, flush=True)
+#         users = User.query.all()
+#         # print('users = ', users, flush=True)
+#         users_json = [user.as_json() for user in users]
+#         return users_json
+
+
+@app.route('/users')
+def users():
+    print("__________HEADERS", flush=True)
+    print(request.headers, flush=True)
+    print("__________JSON", flush=True)
+    print(request.json, flush=True)
+    print("__________", flush=True)
+    # is_logged_in = check_login()
+    # print("is_logged_in: ", is_logged_in, flush=True)
+    # print('auth credentials =', current_identity, flush=True)
+    users = User.query.all()
+    # print('users = ', users, flush=True)
+    users_json = [user.as_json() for user in users]
+    return jsonify(users_json)
+
+
+@app.route('/')
+@app.route('/<path:path>')
+def home(path=""):
+    return render_template('index.html')
 
 
 
-    def get(self):
-        is_logged_in = check_login()
-
-        print("is_logged_in: ", is_logged_in, flush=True)
-
-        print('auth credentials =', current_identity, flush=True)
-        users = User.query.all()
-        # print('users = ', users, flush=True)
-        users_json = [user.as_json() for user in users]
-        return users_json
-
-
-api.add_resource(UsersResource, '/users/')
 
 
 
