@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
 
-import * as actions from '../actions/action-types';
+import * as actions from '../actions/action_types';
 
 
 let initialState = {};

@@ -8,7 +8,7 @@ export default smartComponent(
   class extends Autobind {
 
     checkLogin(props) {
-      if(props.location.pathname !== '/login' && !Cookies.get('jwt')) {
+      if(props.location.pathname == '/account' && !Cookies.get('jwt')) {
         props.history.push('/login');
       }
       const jwt = Cookies.get('jwt');

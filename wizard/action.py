@@ -11,7 +11,7 @@ def remove_header(s):
 
 
 def write_action_creator(action_name):
-    target_file = "actions/actions.js"
+    target_file = "actions/action_creators.js"
 
     path = "{root}/{file}".format(
         root=root, file=target_file
@@ -39,7 +39,7 @@ def write_action_creator(action_name):
 
 
 def write_action_name(action_name):
-    target_file = "actions/action-types.js"
+    target_file = "actions/action_types.js"
 
     path = "{root}/{file}".format(
         root=root, file=target_file

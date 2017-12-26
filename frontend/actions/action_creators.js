@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
 
-import * as actions from './action-types.js';
+import * as actions from './action_types.js';
 
 import { get, post } from '../requests';
 
@@ -15,19 +15,9 @@ export function createUser(data) {
 }
 
 export function login(data) {
-  // Send a POST request
   const promise = post(`${BASE_URL}/auth/`, data);
-  // const promise = axios.post(`${BASE_URL}/users/`, data);
   return {
     type: actions.LOGIN,
-    payload: promise,
-  }
-}
-
-export function getHelp() {
-  const promise = get(`${BASE_URL}/help/`);
-  return {
-    type: actions.GET_HELP,
     payload: promise,
   }
 }

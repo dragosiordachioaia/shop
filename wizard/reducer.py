@@ -54,7 +54,7 @@ def write_reducer(reducer_name):
 
     f = open(path, "x")
 
-    addition = """import * as actions from '../actions/action-types';\n
+    addition = """import * as actions from '../actions/action_types';\n
 export default function(state = {}, action) {
   let newState;
   switch(action.type) {

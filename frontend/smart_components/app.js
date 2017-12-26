@@ -7,8 +7,7 @@ import Header from 'smart_components/header';
 import Banner from 'dumb_components/banner';
 import LoginForm from 'smart_components/login';
 import CreateUserForm from 'smart_components/create_user';
-import Help from 'smart_components/help';
-import Details from 'smart_components/details';
+import PageHome from 'smart_components/page_home';
 
 export default class App extends Autobind {
   render() {
@@ -17,11 +16,10 @@ export default class App extends Autobind {
         <div>
           <Banner />
           <Route path='/' component={Header} />
-          <Route exact path='/' component={Details} />
-          <div>
+          <div className="main-content">
+            <Route exact path='/' component={PageHome} />
             <Route exact path="/login" component={LoginForm} />
             <Route exact path="/register" component={CreateUserForm} />
-            <Help />
           </div>
         </div>
       </BrowserRouter>

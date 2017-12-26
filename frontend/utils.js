@@ -3,7 +3,7 @@ import { bindActionCreators, createStore, applyMiddleware } from 'redux';
 import { connect } from 'react-redux';
 import promiseMiddleware from 'redux-promise';
 
-import * as actions from 'actions/actions';
+import * as actions from 'actions/action_creators';
 
 export class Autobind extends Component {
   constructor() {

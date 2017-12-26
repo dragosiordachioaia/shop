@@ -3456,9 +3456,9 @@ var _reduxPromise = __webpack_require__(258);
 
 var _reduxPromise2 = _interopRequireDefault(_reduxPromise);
 
-var _actions = __webpack_require__(264);
+var _action_creators = __webpack_require__(324);
 
-var actions = _interopRequireWildcard(_actions);
+var actions = _interopRequireWildcard(_action_creators);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -5377,22 +5377,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
 module.exports = ReactBrowserEventEmitter;
 
 /***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var CREATE_USER = exports.CREATE_USER = 'CREATE_USER';
-var LOGIN = exports.LOGIN = 'LOGIN';
-var GET_HELP = exports.GET_HELP = 'GET_HELP';
-var LOGOUT = exports.LOGOUT = 'LOGOUT';
-var GET_USER_DETAILS = exports.GET_USER_DETAILS = 'GET_USER_DETAILS';
-
-/***/ }),
+/* 40 */,
 /* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -27102,98 +27087,19 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(61);
 
-var _demo_reducer = __webpack_require__(254);
-
-var _demo_reducer2 = _interopRequireDefault(_demo_reducer);
-
-var _users_reducer = __webpack_require__(255);
-
-var _users_reducer2 = _interopRequireDefault(_users_reducer);
-
 var _auth_reducer = __webpack_require__(256);
 
 var _auth_reducer2 = _interopRequireDefault(_auth_reducer);
 
-var _help_reducer = __webpack_require__(319);
-
-var _help_reducer2 = _interopRequireDefault(_help_reducer);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = (0, _redux.combineReducers)({
-  demo: _demo_reducer2.default,
-  users: _users_reducer2.default,
-  auth: _auth_reducer2.default,
-  help: _help_reducer2.default
+  auth: _auth_reducer2.default
 });
 
 /***/ }),
-/* 254 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var action = arguments[1];
-
-  var newState = void 0;
-  switch (action.type) {
-    case actions.DEMO_ACTION:
-      if (action.error) {
-        alert('Sorry, an error has occured');
-        return state;
-      }
-      newState = Object.create(state, {});
-      newState = action.payload.data;
-      return newState;
-    default:
-      return state;
-  }
-};
-
-var _actionTypes = __webpack_require__(40);
-
-var actions = _interopRequireWildcard(_actionTypes);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-/***/ }),
-/* 255 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var action = arguments[1];
-
-  var newState = void 0;
-  switch (action.type) {
-    case actions.CREATE_USER:
-      console.log(action);
-    default:
-      return state;
-  }
-};
-
-var _actionTypes = __webpack_require__(40);
-
-var actions = _interopRequireWildcard(_actionTypes);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-/***/ }),
+/* 254 */,
+/* 255 */,
 /* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27249,9 +27155,9 @@ var _jsCookie = __webpack_require__(318);
 
 var _jsCookie2 = _interopRequireDefault(_jsCookie);
 
-var _actionTypes = __webpack_require__(40);
+var _action_types = __webpack_require__(323);
 
-var actions = _interopRequireWildcard(_actionTypes);
+var actions = _interopRequireWildcard(_action_types);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -27296,13 +27202,9 @@ var _create_user = __webpack_require__(312);
 
 var _create_user2 = _interopRequireDefault(_create_user);
 
-var _help = __webpack_require__(320);
+var _page_home = __webpack_require__(322);
 
-var _help2 = _interopRequireDefault(_help);
-
-var _details = __webpack_require__(321);
-
-var _details2 = _interopRequireDefault(_details);
+var _page_home2 = _interopRequireDefault(_page_home);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27332,13 +27234,12 @@ var App = function (_Autobind) {
           null,
           _react2.default.createElement(_banner2.default, null),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _header2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _details2.default }),
           _react2.default.createElement(
             'div',
-            null,
+            { className: 'main-content' },
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _page_home2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/login', component: _login2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/register', component: _create_user2.default }),
-            _react2.default.createElement(_help2.default, null)
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/register', component: _create_user2.default })
           )
         )
       );
@@ -27908,82 +27809,7 @@ module.exports = isArray;
 
 
 /***/ }),
-/* 264 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.createUser = createUser;
-exports.login = login;
-exports.getHelp = getHelp;
-exports.logout = logout;
-exports.getUserDetails = getUserDetails;
-
-var _jsCookie = __webpack_require__(318);
-
-var _jsCookie2 = _interopRequireDefault(_jsCookie);
-
-var _actionTypes = __webpack_require__(40);
-
-var actions = _interopRequireWildcard(_actionTypes);
-
-var _requests = __webpack_require__(265);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var BASE_URL = '';
-
-function createUser(data) {
-  var promise = (0, _requests.get)(BASE_URL + '/users/');
-  return {
-    type: actions.CREATE_USER,
-    payload: promise
-  };
-}
-
-function login(data) {
-  // Send a POST request
-  var promise = (0, _requests.post)(BASE_URL + '/auth/', data);
-  // const promise = axios.post(`${BASE_URL}/users/`, data);
-  return {
-    type: actions.LOGIN,
-    payload: promise
-  };
-}
-
-function getHelp() {
-  var promise = (0, _requests.get)(BASE_URL + '/help/');
-  return {
-    type: actions.GET_HELP,
-    payload: promise
-  };
-}
-
-function logout() {
-  var promise = (0, _requests.post)(BASE_URL + '/logout/', { token: _jsCookie2.default.get('jwt') });
-  _jsCookie2.default.remove('jwt');
-
-  return {
-    type: actions.LOGOUT,
-    payload: null
-  };
-}
-
-function getUserDetails() {
-  var promise = (0, _requests.get)(BASE_URL + '/user_details/');
-  return {
-    type: actions.GET_USER_DETAILS,
-    payload: promise
-  };
-}
-
-/***/ }),
+/* 264 */,
 /* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31611,7 +31437,7 @@ exports.default = (0, _utils.smartComponent)(function (_Autobind) {
   _createClass(_class, [{
     key: 'checkLogin',
     value: function checkLogin(props) {
-      if (props.location.pathname !== '/login' && !_jsCookie2.default.get('jwt')) {
+      if (props.location.pathname == '/account' && !_jsCookie2.default.get('jwt')) {
         props.history.push('/login');
       }
       var jwt = _jsCookie2.default.get('jwt');
@@ -32759,93 +32585,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 
 /***/ }),
-/* 319 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-  var action = arguments[1];
-
-  var newState = void 0;
-  switch (action.type) {
-    case actions.GET_HELP:
-      if (action.error) {
-        if (action.payload.response.status == 401) {
-          return 'You are not logged in';
-        }
-        return state;
-      }
-      return action.payload.data.help;
-    default:
-      return state;
-  }
-};
-
-var _actionTypes = __webpack_require__(40);
-
-var actions = _interopRequireWildcard(_actionTypes);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-/***/ }),
-/* 320 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _utils = __webpack_require__(25);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-exports.default = (0, _utils.smartComponent)(function (_Autobind) {
-  _inherits(_class, _Autobind);
-
-  function _class() {
-    _classCallCheck(this, _class);
-
-    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
-  }
-
-  _createClass(_class, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'p',
-        null,
-        this.props.help
-      );
-    }
-  }]);
-
-  return _class;
-}(_utils.Autobind));
-
-/***/ }),
-/* 321 */
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32905,6 +32648,86 @@ exports.default = (0, _utils.smartComponent)(function (_Autobind) {
 
   return _class;
 }(_utils.Autobind));
+
+/***/ }),
+/* 323 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var CREATE_USER = exports.CREATE_USER = 'CREATE_USER';
+var LOGIN = exports.LOGIN = 'LOGIN';
+var LOGOUT = exports.LOGOUT = 'LOGOUT';
+var GET_USER_DETAILS = exports.GET_USER_DETAILS = 'GET_USER_DETAILS';
+
+/***/ }),
+/* 324 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createUser = createUser;
+exports.login = login;
+exports.logout = logout;
+exports.getUserDetails = getUserDetails;
+
+var _jsCookie = __webpack_require__(318);
+
+var _jsCookie2 = _interopRequireDefault(_jsCookie);
+
+var _action_types = __webpack_require__(323);
+
+var actions = _interopRequireWildcard(_action_types);
+
+var _requests = __webpack_require__(265);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var BASE_URL = '';
+
+function createUser(data) {
+  var promise = (0, _requests.get)(BASE_URL + '/users/');
+  return {
+    type: actions.CREATE_USER,
+    payload: promise
+  };
+}
+
+function login(data) {
+  var promise = (0, _requests.post)(BASE_URL + '/auth/', data);
+  return {
+    type: actions.LOGIN,
+    payload: promise
+  };
+}
+
+function logout() {
+  var promise = (0, _requests.post)(BASE_URL + '/logout/', { token: _jsCookie2.default.get('jwt') });
+  _jsCookie2.default.remove('jwt');
+
+  return {
+    type: actions.LOGOUT,
+    payload: null
+  };
+}
+
+function getUserDetails() {
+  var promise = (0, _requests.get)(BASE_URL + '/user_details/');
+  return {
+    type: actions.GET_USER_DETAILS,
+    payload: promise
+  };
+}
 
 /***/ })
 /******/ ]);
