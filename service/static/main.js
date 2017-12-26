@@ -27966,7 +27966,9 @@ function getHelp() {
 }
 
 function logout() {
+  var promise = (0, _requests.post)(BASE_URL + '/logout/', { token: _jsCookie2.default.get('jwt') });
   _jsCookie2.default.remove('jwt');
+
   return {
     type: actions.LOGOUT,
     payload: null

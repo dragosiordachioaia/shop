@@ -33,7 +33,9 @@ export function getHelp() {
 }
 
 export function logout() {
+  const promise = post(`${BASE_URL}/logout/`, {token: Cookies.get('jwt')});
   Cookies.remove('jwt');
+
   return {
     type: actions.LOGOUT,
     payload: null,

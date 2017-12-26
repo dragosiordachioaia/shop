@@ -9,6 +9,7 @@ from flask_jwt import JWT, jwt_required, current_identity, _jwt_required, JWTErr
 from service import app, db
 from service.security import authenticate, identity
 from service.models.user import User
+from service.models.blacklisted_jwt import BlacklistedJWT
 
 app.config['SECRET_KEY'] = 'super-secret'
 app.config['JWT_DEFAULT_REALM'] = 'Login Required'
@@ -78,6 +79,16 @@ def get_user_details():
         "username": current_identity['username'],
         "email": current_identity['email']
     })
+
+
+@app.route('/logout', methods=["POST"])
+def logout():
+    new_token = BlacklistedJWT(
+        token=request.json['token'],
+    )
+    db.session.add(new_token)
+    db.session.commit()
+    return "Success"
 
 
 @app.route('/')
