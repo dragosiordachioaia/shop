@@ -27206,6 +27206,10 @@ var _page_home = __webpack_require__(322);
 
 var _page_home2 = _interopRequireDefault(_page_home);
 
+var _page_offer_ = __webpack_require__(325);
+
+var _page_offer_2 = _interopRequireDefault(_page_offer_);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27238,6 +27242,7 @@ var App = function (_Autobind) {
             'div',
             { className: 'main-content' },
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _page_home2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/boxing_day_sale', component: _page_offer_2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/login', component: _login2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/register', component: _create_user2.default })
           )
@@ -31463,7 +31468,8 @@ exports.default = (0, _utils.smartComponent)(function (_Autobind) {
         loginButton = _react2.default.createElement(
           'a',
           { onClick: this.props.logout },
-          'Logout'
+          'Logout | ',
+          this.props.auth.username
         );
       } else {
         loginButton = _react2.default.createElement(
@@ -31868,7 +31874,7 @@ exports = module.exports = __webpack_require__(315)(undefined);
 
 
 // module
-exports.push([module.i, "nav {\n  color: #1c384d !important;\n  margin-bottom: 30px;\n  padding: 0 40px;\n}\nnav a {\n  color: #1c384d !important;\n  text-decoration: none;\n  letter-spacing: 4px;\n  font-size: 0.9em;\n  cursor: pointer !important;\n}\nnav a:hover {\n  font-weight: 700;\n}\nnav .left-part {\n  display: inline-block;\n  width: 30%;\n  text-transform: uppercase;\n}\nnav .left-part a {\n  margin-right: 20px;\n}\nnav .logo {\n  display: inline-block;\n  text-align: center;\n  width: 40%;\n  text-transform: uppercase;\n  letter-spacing: 10px;\n  font-size: 1.5em;\n  position: relative;\n  top: 3px;\n  cursor: pointer;\n}\nnav .logo:hover {\n  opacity: 0.7;\n}\nnav .right-part {\n  display: inline-block;\n  width: 30%;\n  text-align: right;\n  text-transform: uppercase;\n}\nnav .right-part a {\n  margin-left: 20px;\n}\n.banner {\n  background-color: #1c384d;\n  color: white;\n  text-align: center;\n  margin-top: -15px;\n}\n.banner h3 {\n  font-weight: 200;\n  padding: 10px;\n  font-size: 0.9em;\n  letter-spacing: 1px;\n  opacity: 0.9;\n}\nbody {\n  margin: 0;\n  font-family: 'Montserrat', sans-serif;\n}\np {\n  margin: 0;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: 'Quattrocento', serif;\n}\n* {\n  box-sizing: border-box;\n}\n.login-form,\n.create-user-form {\n  background-color: #f6f6f6;\n  padding: 20px;\n  text-align: center;\n}\n.login-form input,\n.create-user-form input {\n  font-size: 1.2em;\n  outline: 0;\n}\n.login-form button,\n.create-user-form button {\n  border: 0;\n  outline: 0;\n  background-color: #64b5f6;\n  font-size: 1.2em;\n  margin-top: 20px;\n  color: white;\n  width: 212px;\n  padding: 10px;\n  cursor: pointer;\n}\n.login-form h2,\n.create-user-form h2 {\n  margin-top: 0;\n}\n", ""]);
+exports.push([module.i, "nav {\n  color: #1c384d !important;\n  margin-bottom: 20px;\n  padding: 0 40px;\n}\nnav a {\n  color: #1c384d !important;\n  text-decoration: none;\n  letter-spacing: 4px;\n  font-size: 0.9em;\n  cursor: pointer !important;\n}\nnav a:hover {\n  opacity: 0.7;\n}\nnav .left-part {\n  display: inline-block;\n  width: 30%;\n  text-transform: uppercase;\n}\nnav .left-part a {\n  margin-right: 20px;\n}\nnav .logo {\n  display: inline-block;\n  text-align: center;\n  width: 40%;\n  text-transform: uppercase;\n  letter-spacing: 10px;\n  font-size: 1.5em;\n  position: relative;\n  top: 3px;\n  cursor: pointer;\n}\nnav .right-part {\n  display: inline-block;\n  width: 30%;\n  text-align: right;\n  text-transform: uppercase;\n}\nnav .right-part a {\n  margin-left: 20px;\n}\n.banner {\n  background-color: #1c384d;\n  color: white;\n  text-align: center;\n  margin-top: -15px;\n}\n.banner h3 {\n  font-weight: 200;\n  padding: 10px;\n  font-size: 0.9em;\n  letter-spacing: 1px;\n  opacity: 0.9;\n}\nbody {\n  margin: 0;\n  font-family: 'Montserrat', sans-serif;\n}\np {\n  margin: 0;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: 'Quattrocento', serif;\n}\n* {\n  box-sizing: border-box;\n}\nbutton {\n  outline: 0;\n  border: 0;\n  background-color: red;\n  color: white;\n  text-align: center;\n  font-size: 1.2em;\n  cursor: pointer;\n}\n.login-form,\n.create-user-form {\n  background-color: #f6f6f6;\n  padding: 20px;\n  text-align: center;\n}\n.login-form input,\n.create-user-form input {\n  font-size: 1.2em;\n  outline: 0;\n}\n.login-form button,\n.create-user-form button {\n  border: 0;\n  outline: 0;\n  background-color: #64b5f6;\n  font-size: 1.2em;\n  margin-top: 20px;\n  color: white;\n  width: 212px;\n  padding: 10px;\n  cursor: pointer;\n}\n.login-form h2,\n.create-user-form h2 {\n  margin-top: 0;\n}\n.page-home .hero {\n  width: 100%;\n  max-height: 73vh;\n  position: relative;\n  overflow-y: hidden;\n}\n.page-home .hero img {\n  width: 100%;\n}\n.page-home .hero h1 {\n  position: absolute;\n  top: 9vw;\n  color: white;\n  margin-left: 63%;\n  font-size: 3em;\n  letter-spacing: 3px;\n  font-weight: 100;\n  transition: all 400ms;\n}\n@media (max-width: 1120px) {\n  .page-home .hero h1 {\n    font-size: 2.3em;\n  }\n}\n.page-home .hero button {\n  position: absolute;\n  letter-spacing: 2px;\n  top: calc(9vw + 100px);\n  left: 63%;\n  padding: 10px 40px;\n  border: 1px solid white;\n  background-color: transparent;\n  transition: all 400ms;\n}\n@media (max-width: 1120px) {\n  .page-home .hero button {\n    top: calc(9vw + 77px);\n  }\n}\n.page-home .hero button:hover {\n  background-color: rgba(255, 255, 255, 0.1);\n}\n", ""]);
 
 // exports
 
@@ -32604,6 +32610,8 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(119);
+
 var _utils = __webpack_require__(25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -32626,21 +32634,29 @@ exports.default = (0, _utils.smartComponent)(function (_Autobind) {
   _createClass(_class, [{
     key: 'render',
     value: function render() {
-      var username = this.props.auth;
-      // alert(JSON.stringify(username));
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'page-home' },
         _react2.default.createElement(
-          'p',
-          null,
-          'Hello! You are logged in.'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Your username is ',
-          this.props.auth.username
+          'div',
+          { className: 'hero' },
+          _react2.default.createElement('img', {
+            src: 'https://lh4.googleusercontent.com/zT3YZjlpgp6RilW_mzWEKWg_tmlucKzHdLZi_0NDLosYPdWm7jB9zyYdwRwSLp0X8SQFfEM5-t8nX_JvqWFe=w3360-h1592-rw'
+          }),
+          _react2.default.createElement(
+            'h1',
+            null,
+            'Boxing Day Sale'
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/boxing_day_sale' },
+            _react2.default.createElement(
+              'button',
+              null,
+              'See our offer'
+            )
+          )
         )
       );
     }
@@ -32728,6 +32744,60 @@ function getUserDetails() {
     payload: promise
   };
 }
+
+/***/ }),
+/* 325 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _utils = __webpack_require__(25);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+exports.default = (0, _utils.smartComponent)(function (_Autobind) {
+  _inherits(_class, _Autobind);
+
+  function _class() {
+    _classCallCheck(this, _class);
+
+    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+  }
+
+  _createClass(_class, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'page-offer-1' },
+        _react2.default.createElement(
+          'p',
+          null,
+          'This is the offer\'s page'
+        )
+      );
+    }
+  }]);
+
+  return _class;
+}(_utils.Autobind));
 
 /***/ })
 /******/ ]);

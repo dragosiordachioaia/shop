@@ -1,0 +1,47 @@
+.page-home {
+  .hero {
+    width: 100%;
+    max-height: 73vh;
+    position: relative;
+    overflow-y: hidden;
+
+    img {
+      width: 100%;
+    }
+
+    h1 {
+      position: absolute;
+      top: 9vw;
+      color: white;
+      margin-left: 63%;
+      font-size: 3em;
+      letter-spacing: 3px;
+      font-weight: 100;
+      transition: all 400ms;
+
+      @media(max-width: 1120px) {
+        font-size: 2.3em;
+      }
+    }
+
+    button {
+      position: absolute;
+      letter-spacing: 2px;
+      top: ~'calc(9vw + 100px)';
+      left: 63%;
+      padding: 10px 40px;
+      border: 1px solid white;
+      background-color: transparent;
+      transition: all 400ms;
+
+      @media(max-width: 1120px) {
+        top: ~'calc(9vw + 77px)';
+      }
+
+      &:hover {
+        background-color: rgba(255,255,255,0.1);
+        // background-color: rgba(0,0,0,0.5);
+      }
+    }
+  }
+}

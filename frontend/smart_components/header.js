@@ -28,7 +28,7 @@ export default smartComponent(
     render() {
       let loginButton = "";
       if(Cookies.get('jwt')) {
-        loginButton = <a onClick={this.props.logout}>Logout</a>;
+        loginButton = <a onClick={this.props.logout}>Logout | {this.props.auth.username}</a>;
       } else {
         loginButton = <Link to="/login">Login</Link>
       }
