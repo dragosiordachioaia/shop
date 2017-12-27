@@ -1,9 +1,5 @@
 version: "2"
 services:
-
-  redis:
-    image: redis:alpine
-
   mysql:
     image: mysql:5.7
     ports:
@@ -20,14 +16,14 @@ services:
     volumes:
       - .:/app
     depends_on:
-      - mysql 
+      - mysql
     ports:
       - "8000:8000"
     environment:
       FLASK_APP: /app/service/__init__.py
       FLASK_DEBUG: 1
       SERVICE_MODE: dev
-      DB_HOST: mysql 
+      DB_HOST: mysql
       DB_NAME: shop
       DB_USER: shop
       DB_PASS: shop
