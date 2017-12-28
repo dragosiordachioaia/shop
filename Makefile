@@ -20,9 +20,9 @@ run:
 	docker run --rm -p 8000:8000 ${ZONE}/${PROJECT_NAME}/$(REPO):$(TAG)
 
 upgrade:
-	kubectl exec $(POD) -c $(CONTAINER) -it --namespace=$(ENV) -- flask db upgrade
+	kubectl exec $(POD) -c $(CONTAINER) -it -- flask db upgrade
 
 shell:
-	kubectl exec $(POD) -c $(CONTAINER) -it --namespace=$(ENV) -- bash
+	kubectl exec $(POD) -c $(CONTAINER) -it -- bash
 
 .PHONY: docker push undo upgrade shell all

@@ -10,7 +10,7 @@ export default smartComponent(
         <div className="page-home">
           <div className="hero">
             <img
-              src="https://storage.googleapis.com/digitalmonkeys_shop_1/shop-bg-2.jpg"
+              src="https://storage.googleapis.com/eu.artifacts.ceremonial-rush-190313.appspot.com/static_assets/shop-bg-2.jpg"
             />
             <h1>Boxing Day Sale</h1>
             <Link to="/boxing_day_sale">

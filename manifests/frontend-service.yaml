@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: shop-frontend
+spec:
+  selector:
+    app: shop
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
+  type: LoadBalancer
