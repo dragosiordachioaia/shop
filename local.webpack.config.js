@@ -24,7 +24,7 @@ module.exports = {
       }
     ]
   },
-  watch: false,
+  watch: true,
   watchOptions: {
     aggregateTimeout: 500,
     poll: 500,

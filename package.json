@@ -17,7 +17,8 @@
     "webpack-dev-server": "^2.8.2"
   },
   "scripts": {
-    "start": "webpack --config webpack.config.js"
+    "watch": "webpack --config local.webpack.config.js",
+    "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
